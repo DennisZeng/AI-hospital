@@ -33,10 +33,6 @@ const content = {
       subtitle: "Experience the convergence of quantum diagnostics and robotic surgery. Ensuring humanity's survival for the transition to Type II Civilization.",
       ctaPrimary: "SMART TRIAGE",
       ctaSecondary: "BOOK VISIT",
-      mission: {
-        label: "CIVILIZATION OBJECTIVE",
-        text: "AVOID TYPE I COLLAPSE. TARGET: TYPE III."
-      },
       stats: {
         accuracy: "Accuracy",
         latency: "Response",
@@ -105,10 +101,6 @@ const content = {
       subtitle: "体验量子诊断与机器人手术的完美融合。守护人类生命，助力文明向二级、三级跨越。",
       ctaPrimary: "智能导诊",
       ctaSecondary: "预约挂号",
-      mission: {
-        label: "文明最高指令",
-        text: "拒绝一级文明毁灭，目标：进军三级文明。"
-      },
       stats: {
         accuracy: "诊断准确率",
         latency: "响应速度",
@@ -419,7 +411,7 @@ const ScanIcon = (props: any) => (
   </svg>
 )
 
-const NavLink = ({ text, href }: { text: string, href: string }) => (
+const NavLink: React.FC<{ text: string; href: string }> = ({ text, href }) => (
   <a href={href} className="relative text-cyan-100/70 hover:text-cyan-400 transition-colors duration-300 text-xs xl:text-sm font-medium tracking-wide group whitespace-nowrap">
     {text}
     <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
@@ -525,19 +517,6 @@ const App: React.FC = () => {
             <p className="text-lg text-cyan-100/60 max-w-lg leading-relaxed">
               {t.hero.subtitle}
             </p>
-
-            {/* Civilization Mission Narrative Block */}
-            <div className="relative pl-6 border-l-2 border-cyan-500/50 py-2 my-6 bg-gradient-to-r from-cyan-900/10 to-transparent">
-              <div className="absolute -left-[5px] top-0 w-2 h-2 bg-cyan-500 rounded-full"></div>
-              <div className="absolute -left-[5px] bottom-0 w-2 h-2 bg-cyan-500 rounded-full"></div>
-              <div className="flex items-center gap-2 mb-1">
-                 <Rocket className="w-4 h-4 text-cyan-400" />
-                 <span className="text-xs font-bold tracking-widest text-cyan-300 uppercase">{t.hero.mission.label}</span>
-              </div>
-              <p className="text-sm md:text-base font-display text-white/90 italic">
-                "{t.hero.mission.text}"
-              </p>
-            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-display font-bold tracking-wider rounded-sm clip-path-slant transition-all hover:scale-105 shadow-[0_0_20px_rgba(34,211,238,0.5)] flex items-center justify-center gap-2">
